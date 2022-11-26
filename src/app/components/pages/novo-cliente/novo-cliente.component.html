@@ -1,25 +1,25 @@
 <div class="container">
     <div class="form-container mat-elevation-z8">
         <h1>Cadastrar Cliente</h1>
-        <form>
+        <form [formGroup]="novoClienteForm" (ngSubmit)="addCliente()" method="post">
             <mat-form-field appearance="fill">
                 <mat-label>Nome Completo</mat-label>
-                <input matInput>
+                <input matInput formControlName="nome">
             </mat-form-field>
             <mat-form-field appearance="fill">
                 <mat-label>CPF</mat-label>
-                <input matInput>
+                <input matInput formControlName="cpf">
             </mat-form-field>
             <mat-form-field appearance="fill">
                 <mat-label>Endereço</mat-label>
-                <input matInput>
+                <input matInput formControlName="endereco">
             </mat-form-field>
             <mat-form-field appearance="fill">
                 <mat-label>Telefone</mat-label>
-                <input matInput>
+                <input matInput formControlName="telefone">
             </mat-form-field>
             <div class="buttons">
-                <button mat-raised-button color="primary">
+                <button mat-raised-button color="primary" type="submit">
                     Salvar
                 </button>
 

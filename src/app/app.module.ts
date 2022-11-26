@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -13,6 +15,7 @@ import { NovoPetComponent } from './components/pages/novo-pet/novo-pet.component
 import { LoginComponent } from './components/pages/login/login.component';
 import { UsuariosComponent } from './components/pages/usuarios/usuarios.component';
 import { NovoUsuarioComponent } from './components/pages/novo-usuario/novo-usuario.component';
+import { PetsClienteComponent } from './components/pages/pets-cliente/pets-cliente.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 
 // angular material import
@@ -24,7 +27,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,7 @@ import { HttpClientModule } from '@angular/common/http';
     UsuariosComponent,
     NovoUsuarioComponent,
     SidenavComponent,
+    PetsClienteComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,6 +54,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatTableModule,
     MatFormFieldModule,
     MatInputModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

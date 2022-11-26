@@ -15,7 +15,7 @@ export class ClientesComponent implements OnInit {
 
   constructor(private clienteService: ClienteService) {}
 
-  displayedColumns: string[] = ['nome', 'cpf', 'endereco', 'telefone'];
+  displayedColumns: string[] = ['nome', 'cpf', 'endereco', 'telefone', 'acoes'];
   dataSource!: MatTableDataSource<Cliente>;
 
   applyFilter(event: Event) {

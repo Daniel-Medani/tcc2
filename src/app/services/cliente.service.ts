@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environments';
 import { Cliente } from '../interfaces/cliente';
+import { Pet } from '../interfaces/pet';
 
 @Injectable({
   providedIn: 'root',
@@ -16,6 +17,10 @@ export class ClienteService {
     return this.http.get<Cliente[]>(this.apiUrl);
   }
 
+  getClientePets(_id: string) {
+    return this.http.get<Pet[]>(this.apiUrl + _id + '/pets');
+  }
+
   getCliente(_id: string) {
     return this.http.get<Cliente>(this.apiUrl + _id);
   }
@@ -24,8 +29,12 @@ export class ClienteService {
     return this.http.post<Cliente>(this.apiUrl, cliente);
   }
 
-  putCliente(cliente: Cliente, _id: string) {
-    return this.http.put<Cliente>(this.apiUrl + _id, cliente);
+  addPet(pet: Pet[], _id: string): Observable<Pet> {
+    return this.http.post<Pet>(this.apiUrl + _id + '/pets', pet);
+  }
+
+  patchCliente(cliente: Cliente, _id: string) {
+    return this.http.patch<Cliente>(this.apiUrl + _id, cliente);
   }
 
   deleteCliente(_id: string) {
