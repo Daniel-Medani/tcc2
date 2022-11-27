@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
 import { Pet } from 'src/app/interfaces/pet';
 import { ClienteService } from 'src/app/services/cliente.service';
+import { PetService } from 'src/app/services/pet.service';
 
 @Component({
   selector: 'app-pets-cliente',
@@ -18,13 +18,14 @@ export class PetsClienteComponent implements OnInit {
 
   constructor(
     private clienteService: ClienteService,
+    private petService: PetService,
     private route: ActivatedRoute
   ) {}
 
   pet!: Pet[];
   dataSource!: MatTableDataSource<Pet>;
 
-  displayedColumns: string[] = ['nome', 'sexo', 'idade', 'raca'];
+  displayedColumns: string[] = ['nome', 'sexo', 'idade', 'raca', 'acoes'];
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -35,6 +36,14 @@ export class PetsClienteComponent implements OnInit {
     this.clienteService.getClientePets(_id).subscribe({
       next: (cliente) => {
         this.dataSource = new MatTableDataSource(cliente);
+      },
+    });
+  }
+
+  deletePet(_id: string): void {
+    this.petService.deletePet(_id).subscribe({
+      next: () => {
+        window.location.reload();
       },
     });
   }
