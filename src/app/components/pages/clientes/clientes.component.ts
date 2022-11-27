@@ -34,7 +34,7 @@ export class ClientesComponent implements OnInit {
   deleteCliente(_id: string) {
     this.clienteService.deleteCliente(_id).subscribe({
       next: () => {
-        this.getClientes();
+        window.location.reload();
       },
     });
   }
