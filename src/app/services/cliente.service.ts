@@ -25,7 +25,7 @@ export class ClienteService {
     return this.http.get<Cliente>(this.apiUrl + _id);
   }
 
-  addCliente(cliente: Cliente[]): Observable<Cliente> {
+  addCliente(cliente: Cliente): Observable<Cliente> {
     return this.http.post<Cliente>(this.apiUrl, cliente);
   }
 
@@ -34,7 +34,7 @@ export class ClienteService {
   }
 
   patchCliente(cliente: Cliente, _id: string) {
-    return this.http.patch<Cliente>(this.apiUrl + _id, cliente);
+    return this.http.patch<Cliente>(this.apiUrl + _id + '/editar', cliente);
   }
 
   deleteCliente(_id: string) {

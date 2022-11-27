@@ -32,7 +32,6 @@ export class NovoClienteComponent implements OnInit {
 
   addCliente() {
     if (this.novoClienteForm.valid) {
-      console.log(this.novoClienteForm.value);
       this.clienteService
         .addCliente(this.novoClienteForm.value)
         .subscribe(() => {

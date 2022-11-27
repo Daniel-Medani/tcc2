@@ -27,6 +27,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { EditarClienteComponent } from './components/pages/editar-cliente/editar-cliente.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { MatInputModule } from '@angular/material/input';
     NovoUsuarioComponent,
     SidenavComponent,
     PetsClienteComponent,
+    EditarClienteComponent,
   ],
   imports: [
     BrowserModule,
