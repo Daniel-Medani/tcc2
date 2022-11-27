@@ -23,8 +23,8 @@ export class EditarPetComponent implements OnInit {
   editPetForm = this.fb.group({
     nome: ['', Validators.required],
     sexo: ['', Validators.required],
-    idade: ['', Validators.required],
-    raca: ['', Validators.required],
+    idade: [''],
+    raca: [''],
   });
 
   ngOnInit(): void {

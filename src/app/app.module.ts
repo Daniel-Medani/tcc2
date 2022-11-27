@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxMaskModule } from 'ngx-mask';
 
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,6 +18,8 @@ import { UsuariosComponent } from './components/pages/usuarios/usuarios.componen
 import { NovoUsuarioComponent } from './components/pages/novo-usuario/novo-usuario.component';
 import { PetsClienteComponent } from './components/pages/pets-cliente/pets-cliente.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { EditarClienteComponent } from './components/pages/editar-cliente/editar-cliente.component';
+import { EditarPetComponent } from './components/pages/editar-pet/editar-pet.component';
 
 // angular material import
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -27,8 +30,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { EditarClienteComponent } from './components/pages/editar-cliente/editar-cliente.component';
-import { EditarPetComponent } from './components/pages/editar-pet/editar-pet.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -60,6 +62,8 @@ import { EditarPetComponent } from './components/pages/editar-pet/editar-pet.com
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
+    NgxMaskModule.forRoot(),
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

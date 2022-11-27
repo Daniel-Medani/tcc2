@@ -1,6 +1,6 @@
 <div class="container">
   <div class="form-container mat-elevation-z8">
-    <h1>Atualizar Cliente</h1>
+    <h1>Atualizar Pet</h1>
     <form [formGroup]="editPetForm" (ngSubmit)="updatePet()">
       <mat-form-field appearance="fill">
         <mat-label>Nome</mat-label>
@@ -8,7 +8,10 @@
       </mat-form-field>
       <mat-form-field appearance="fill">
         <mat-label>Sexo</mat-label>
-        <input matInput formControlName="sexo" />
+        <mat-select formControlName="sexo">
+          <mat-option value="Macho">Macho</mat-option>
+          <mat-option value="Fêmea">Fêmea</mat-option>
+        </mat-select>
       </mat-form-field>
       <mat-form-field appearance="fill">
         <mat-label>Idade</mat-label>
@@ -21,12 +24,7 @@
       <div class="buttons">
         <button mat-raised-button color="primary" type="submit">Salvar</button>
 
-        <button
-          style="margin-left: 1.5rem"
-          mat-raised-button
-          color="warn"
-          (click)="goBack()"
-        >
+        <button style="margin-left: 1.5rem" mat-raised-button color="warn" (abort)="goBack()">
           Cancelar
         </button>
       </div>
