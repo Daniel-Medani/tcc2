@@ -6,6 +6,7 @@ import { NovoPetComponent } from './components/pages/novo-pet/novo-pet.component
 import { PetsClienteComponent } from './components/pages/pets-cliente/pets-cliente.component';
 import { PetsComponent } from './components/pages/pets/pets.component';
 import { EditarClienteComponent } from './components/pages/editar-cliente/editar-cliente.component';
+import { EditarPetComponent } from './components/pages/editar-pet/editar-pet.component';
 
 const routes: Routes = [
   { path: 'clientes', component: ClientesComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'clientes/novo', component: NovoClienteComponent },
   { path: 'clientes/:id/editar', component: EditarClienteComponent },
   { path: 'clientes/:id/pets', component: PetsClienteComponent },
+  { path: 'pets/:idPet/editar', component: EditarPetComponent },
   { path: 'clientes/:id/pets/novo', component: NovoPetComponent },
 ];
 

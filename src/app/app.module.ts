@@ -28,6 +28,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { EditarClienteComponent } from './components/pages/editar-cliente/editar-cliente.component';
+import { EditarPetComponent } from './components/pages/editar-pet/editar-pet.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { EditarClienteComponent } from './components/pages/editar-cliente/editar
     SidenavComponent,
     PetsClienteComponent,
     EditarClienteComponent,
+    EditarPetComponent,
   ],
   imports: [
     BrowserModule,

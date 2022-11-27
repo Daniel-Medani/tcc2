@@ -15,6 +15,14 @@ export class PetService {
     return this.http.get<Pet[]>(this.apiUrl);
   }
 
+  getPet(_id: string) {
+    return this.http.get<Pet>(`${this.apiUrl}/${_id}`);
+  }
+
+  patchPet(pet: Pet, _id: string) {
+    return this.http.patch<Pet>(`${this.apiUrl}/${_id}/editar`, pet);
+  }
+
   deletePet(_id: string) {
     return this.http.delete<Pet>(`${this.apiUrl}/${_id}`);
   }
