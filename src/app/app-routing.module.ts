@@ -7,8 +7,12 @@ import { PetsClienteComponent } from './components/pages/pets-cliente/pets-clien
 import { PetsComponent } from './components/pages/pets/pets.component';
 import { EditarClienteComponent } from './components/pages/editar-cliente/editar-cliente.component';
 import { EditarPetComponent } from './components/pages/editar-pet/editar-pet.component';
+import { AgendaComponent } from './components/pages/agenda/agenda.component';
+import { NovoAgendamentoComponent } from './components/pages/novo-agendamento/novo-agendamento.component';
 
 const routes: Routes = [
+  { path: 'agendamentos', component: AgendaComponent },
+  { path: 'agendamentos/novo', component: NovoAgendamentoComponent },
   { path: 'clientes', component: ClientesComponent },
   { path: 'pets', component: PetsComponent },
   { path: 'clientes/novo', component: NovoClienteComponent },

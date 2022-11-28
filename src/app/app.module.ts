@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskModule } from 'ngx-mask';
+import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,6 +21,8 @@ import { PetsClienteComponent } from './components/pages/pets-cliente/pets-clien
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { EditarClienteComponent } from './components/pages/editar-cliente/editar-cliente.component';
 import { EditarPetComponent } from './components/pages/editar-pet/editar-pet.component';
+import { AgendaComponent } from './components/pages/agenda/agenda.component';
+import { NovoAgendamentoComponent } from './components/pages/novo-agendamento/novo-agendamento.component';
 
 // angular material import
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -31,6 +34,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -46,6 +51,8 @@ import { MatSelectModule } from '@angular/material/select';
     PetsClienteComponent,
     EditarClienteComponent,
     EditarPetComponent,
+    AgendaComponent,
+    NovoAgendamentoComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,8 +71,11 @@ import { MatSelectModule } from '@angular/material/select';
     ReactiveFormsModule,
     NgxMaskModule.forRoot(),
     MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatCheckboxModule,
   ],
-  providers: [],
+  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'pt-br' }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

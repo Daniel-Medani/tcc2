@@ -1,0 +1,81 @@
+<div class="container">
+    <div class="form-container mat-elevation-z8">
+        <form>
+            <h1>Agendamento</h1>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Status</mat-label>
+                <mat-select>
+                    <mat-option value="Agendado">Agendado</mat-option>
+                    <mat-option value="Iniciar Serviço">Iniciar Serviço</mat-option>
+                    <mat-option value="Concluído">Concluído</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <div class="date-time">
+
+                <mat-form-field class="date" appearance="fill">
+                    <mat-label>Data</mat-label>
+                    <input matInput [matDatepicker]="picker">
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+
+                <mat-form-field class="time" appearance="fill">
+                    <mat-label>Horário</mat-label>
+                    <input matInput type="time">
+                </mat-form-field>
+
+            </div>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Cliente</mat-label>
+                <input matInput>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Pet</mat-label>
+                <input matInput>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Serviços</mat-label>
+                <input matInput>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Transporte</mat-label>
+                <mat-select>
+                    <mat-option value="Cliente">Cliente</mat-option>
+                    <mat-option value="Busca/Entrega">Busca/Entrega</mat-option>
+                    <mat-option value="Buscar">Buscar</mat-option>
+                    <mat-option value="Entregar">Entregar</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <h2>Observações</h2>
+
+            <div class="checkbox">
+                <mat-checkbox color="warn" class="example-margin">Carrapatos</mat-checkbox>
+
+                <mat-checkbox color="warn" class="example-margin">Pulgas</mat-checkbox>
+
+                <mat-checkbox color="warn" class="example-margin">Feridas</mat-checkbox>
+            </div>
+
+            <mat-form-field class="text-area" appearance="fill">
+                <mat-label>Textarea</mat-label>
+                <textarea matInput></textarea>
+            </mat-form-field>
+
+            <div class="buttons">
+                <button mat-raised-button color="primary" type="submit">Salvar</button>
+
+                <button style="margin-left: 1.5rem" mat-raised-button color="warn" (click)="goBack()">
+                    Cancelar
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>
