@@ -1,11 +1,11 @@
 <div class="container">
     <div class="form-container mat-elevation-z8">
-        <form>
+        <form [formGroup]="novoAgendamentoForm" (ngSubmit)="createAgendamento()">
             <h1>Agendamento</h1>
 
             <mat-form-field appearance="fill">
                 <mat-label>Status</mat-label>
-                <mat-select>
+                <mat-select formControlName="status">
                     <mat-option value="Agendado">Agendado</mat-option>
                     <mat-option value="Iniciar Serviço">Iniciar Serviço</mat-option>
                     <mat-option value="Concluído">Concluído</mat-option>
@@ -16,56 +16,62 @@
 
                 <mat-form-field class="date" appearance="fill">
                     <mat-label>Data</mat-label>
-                    <input matInput [matDatepicker]="picker">
+                    <input matInput formControlName="data" [matDatepicker]="picker">
                     <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
 
                 <mat-form-field class="time" appearance="fill">
                     <mat-label>Horário</mat-label>
-                    <input matInput type="time">
+                    <input formControlName="hora" matInput type="time">
                 </mat-form-field>
 
             </div>
 
             <mat-form-field appearance="fill">
                 <mat-label>Cliente</mat-label>
-                <input matInput>
+                <mat-select (selectionChange)="filtrarPets($event)" formControlName="cliente">
+                    <mat-option *ngFor="let cliente of clientes$ | async" [value]="cliente._id">{{cliente.nome}}
+                    </mat-option>
+                </mat-select>
+
             </mat-form-field>
 
             <mat-form-field appearance="fill">
                 <mat-label>Pet</mat-label>
-                <input matInput>
+                <mat-select formControlName="pet">
+                    <mat-option *ngFor="let pet of pets$ | async" [value]="pet._id">{{pet.nome}}</mat-option>
+                </mat-select>
             </mat-form-field>
 
             <mat-form-field appearance="fill">
                 <mat-label>Serviços</mat-label>
-                <input matInput>
+                <input formControlName="servico" matInput>
             </mat-form-field>
 
             <mat-form-field appearance="fill">
                 <mat-label>Transporte</mat-label>
-                <mat-select>
-                    <mat-option value="Cliente">Cliente</mat-option>
-                    <mat-option value="Busca/Entrega">Busca/Entrega</mat-option>
-                    <mat-option value="Buscar">Buscar</mat-option>
-                    <mat-option value="Entregar">Entregar</mat-option>
+                <mat-select formControlName="transporte">
+                    <mat-option value="1">Cliente</mat-option>
+                    <mat-option value="2">Busca/Entrega</mat-option>
+                    <mat-option value="3">Buscar</mat-option>
+                    <mat-option value="4">Entregar</mat-option>
                 </mat-select>
             </mat-form-field>
 
             <h2>Observações</h2>
 
             <div class="checkbox">
-                <mat-checkbox color="warn" class="example-margin">Carrapatos</mat-checkbox>
+                <mat-checkbox color="warn" class="example-margin" formControlName="carrapatos">Carrapatos</mat-checkbox>
 
-                <mat-checkbox color="warn" class="example-margin">Pulgas</mat-checkbox>
+                <mat-checkbox color="warn" class="example-margin" formControlName="pulgas">Pulgas</mat-checkbox>
 
-                <mat-checkbox color="warn" class="example-margin">Feridas</mat-checkbox>
+                <mat-checkbox color="warn" class="example-margin" formControlName="feridas">Feridas</mat-checkbox>
             </div>
 
             <mat-form-field class="text-area" appearance="fill">
                 <mat-label>Textarea</mat-label>
-                <textarea matInput></textarea>
+                <textarea matInput formControlName="obs"></textarea>
             </mat-form-field>
 
             <div class="buttons">
