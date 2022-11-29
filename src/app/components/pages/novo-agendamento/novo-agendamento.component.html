@@ -12,21 +12,10 @@
                 </mat-select>
             </mat-form-field>
 
-            <div class="date-time">
-
-                <mat-form-field class="date" appearance="fill">
-                    <mat-label>Data</mat-label>
-                    <input matInput formControlName="data" [matDatepicker]="picker">
-                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-datepicker #picker></mat-datepicker>
-                </mat-form-field>
-
-                <mat-form-field class="time" appearance="fill">
-                    <mat-label>Horário</mat-label>
-                    <input formControlName="hora" matInput type="time">
-                </mat-form-field>
-
-            </div>
+            <mat-form-field appearance="fill">
+                <mat-label>Data e hora</mat-label>
+                <input formControlName="data" matInput type="datetime-local">
+            </mat-form-field>
 
             <mat-form-field appearance="fill">
                 <mat-label>Cliente</mat-label>
@@ -62,11 +51,11 @@
             <h2>Observações</h2>
 
             <div class="checkbox">
-                <mat-checkbox color="warn" class="example-margin" formControlName="carrapatos">Carrapatos</mat-checkbox>
+                <mat-checkbox color="warn" formControlName="carrapatos">Carrapatos</mat-checkbox>
 
-                <mat-checkbox color="warn" class="example-margin" formControlName="pulgas">Pulgas</mat-checkbox>
+                <mat-checkbox color="warn" formControlName="pulgas">Pulgas</mat-checkbox>
 
-                <mat-checkbox color="warn" class="example-margin" formControlName="feridas">Feridas</mat-checkbox>
+                <mat-checkbox color="warn" formControlName="feridas">Feridas</mat-checkbox>
             </div>
 
             <mat-form-field class="text-area" appearance="fill">
@@ -74,10 +63,10 @@
                 <textarea matInput formControlName="obs"></textarea>
             </mat-form-field>
 
-            <div class="buttons">
+            <div>
                 <button mat-raised-button color="primary" type="submit">Salvar</button>
 
-                <button style="margin-left: 1.5rem" mat-raised-button color="warn" (click)="goBack()">
+                <button style="margin-left: 1.5rem" mat-raised-button color="warn" routerLink="/agendamentos">
                     Cancelar
                 </button>
             </div>

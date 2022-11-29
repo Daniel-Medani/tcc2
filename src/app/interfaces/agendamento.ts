@@ -1,7 +1,6 @@
 export interface Agendamento {
   status: string;
   data: Date;
-  hora: string;
   cliente: string;
   pet: string;
   servico: string;

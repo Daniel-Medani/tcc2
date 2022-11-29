@@ -28,7 +28,6 @@ export class NovoAgendamentoComponent implements OnInit {
     this.novoAgendamentoForm = this.fb.group({
       status: [''],
       data: [''],
-      hora: [''],
       cliente: [''],
       pet: [''],
       servico: [''],
@@ -39,10 +38,6 @@ export class NovoAgendamentoComponent implements OnInit {
       obs: [''],
     });
     this.getClientes();
-  }
-
-  goBack() {
-    this.location.back();
   }
 
   getClientes() {
@@ -66,6 +61,19 @@ export class NovoAgendamentoComponent implements OnInit {
         },
       });
   }
+
+  getDate() {
+    const data = this.novoAgendamentoForm.value.data;
+    console.log(data);
+  }
+
+  // getDate() {
+  //   const tzoffset = new Date().getTimezoneOffset() * 60000;
+  //   const localISOTime = new Date(Date.now() - tzoffset)
+  //     .toISOString()
+  //     .slice(0, -1);
+  //   console.log(localISOTime);
+  // }
 
   // definirHora(event: any) {
   //   const hora = event.target.value;
