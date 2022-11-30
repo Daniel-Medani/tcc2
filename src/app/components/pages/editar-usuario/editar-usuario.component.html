@@ -1,7 +1,7 @@
 <div class="container">
     <div class="form-container mat-elevation-z8">
-        <h1>Cadastrar Cliente</h1>
-        <form [formGroup]="novoUsuarioForm" (ngSubmit)="createUsuario()" method="post">
+        <h1>Atualizar Cliente</h1>
+        <form [formGroup]="editUsuarioForm" (ngSubmit)="updateUsuario()">
             <mat-form-field appearance="fill">
                 <mat-label>Nome do Usuario</mat-label>
                 <input matInput formControlName="nomeUsuario">
@@ -12,15 +12,11 @@
             </mat-form-field>
             <mat-form-field appearance="fill">
                 <mat-label>Email</mat-label>
-                <input matInput type="email" formControlName="email">
+                <input matInput formControlName="email">
             </mat-form-field>
             <mat-form-field appearance="fill">
                 <mat-label>Função</mat-label>
-                <mat-select formControlName="funcao">
-                    <mat-option value="Gerente">Gerente</mat-option>
-                    <mat-option value="Recepcionista">Recepcionista</mat-option>
-                    <mat-option value="Esteticista">Esteticista</mat-option>
-                </mat-select>
+                <input matInput formControlName="funcao">
             </mat-form-field>
             <div class="buttons">
                 <button mat-raised-button color="primary" type="submit">

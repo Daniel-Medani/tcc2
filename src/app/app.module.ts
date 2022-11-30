@@ -23,6 +23,7 @@ import { EditarClienteComponent } from './components/pages/editar-cliente/editar
 import { EditarPetComponent } from './components/pages/editar-pet/editar-pet.component';
 import { AgendaComponent } from './components/pages/agenda/agenda.component';
 import { NovoAgendamentoComponent } from './components/pages/novo-agendamento/novo-agendamento.component';
+import { EditarUsuarioComponent } from './components/pages/editar-usuario/editar-usuario.component';
 
 // angular material import
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -53,6 +54,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     EditarPetComponent,
     AgendaComponent,
     NovoAgendamentoComponent,
+    EditarUsuarioComponent,
   ],
   imports: [
     BrowserModule,

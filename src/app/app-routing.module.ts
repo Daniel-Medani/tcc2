@@ -11,6 +11,7 @@ import { AgendaComponent } from './components/pages/agenda/agenda.component';
 import { NovoAgendamentoComponent } from './components/pages/novo-agendamento/novo-agendamento.component';
 import { UsuariosComponent } from './components/pages/usuarios/usuarios.component';
 import { NovoUsuarioComponent } from './components/pages/novo-usuario/novo-usuario.component';
+import { EditarUsuarioComponent } from './components/pages/editar-usuario/editar-usuario.component';
 
 const routes: Routes = [
   { path: 'agendamentos', component: AgendaComponent },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'clientes/:id/pets/novo', component: NovoPetComponent },
   { path: 'usuarios', component: UsuariosComponent },
   { path: 'usuarios/novo', component: NovoUsuarioComponent },
+  { path: 'usuarios/:id/editar', component: EditarUsuarioComponent },
 ];
 
 @NgModule({
