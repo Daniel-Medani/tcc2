@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environments';
@@ -14,5 +14,9 @@ export class AgendamentoService {
 
   addAgendamento(agendamento: Agendamento) {
     return this.http.post<Agendamento>(`${this.apiUrl}/novo`, agendamento);
+  }
+
+  getAgendamento(data: string) {
+    return this.http.post<Agendamento[]>(`${this.apiUrl}`, { data });
   }
 }
