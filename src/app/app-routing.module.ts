@@ -9,6 +9,8 @@ import { EditarClienteComponent } from './components/pages/editar-cliente/editar
 import { EditarPetComponent } from './components/pages/editar-pet/editar-pet.component';
 import { AgendaComponent } from './components/pages/agenda/agenda.component';
 import { NovoAgendamentoComponent } from './components/pages/novo-agendamento/novo-agendamento.component';
+import { UsuariosComponent } from './components/pages/usuarios/usuarios.component';
+import { NovoUsuarioComponent } from './components/pages/novo-usuario/novo-usuario.component';
 
 const routes: Routes = [
   { path: 'agendamentos', component: AgendaComponent },
@@ -20,6 +22,8 @@ const routes: Routes = [
   { path: 'clientes/:id/pets', component: PetsClienteComponent },
   { path: 'pets/:idPet/editar', component: EditarPetComponent },
   { path: 'clientes/:id/pets/novo', component: NovoPetComponent },
+  { path: 'usuarios', component: UsuariosComponent },
+  { path: 'usuarios/novo', component: NovoUsuarioComponent },
 ];
 
 @NgModule({
