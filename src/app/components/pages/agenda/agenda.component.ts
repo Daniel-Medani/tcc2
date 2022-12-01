@@ -25,7 +25,6 @@ export class AgendaComponent implements OnInit {
     'pet',
     'cliente',
     'telefone',
-    'transporte',
     'acoes',
   ];
   dataSource!: MatTableDataSource<Agendamento>;
@@ -46,5 +45,9 @@ export class AgendaComponent implements OnInit {
         this.dataSource = new MatTableDataSource(agendamento);
       },
     });
+  }
+
+  deleteAgendamento() {
+    console.log('delete');
   }
 }

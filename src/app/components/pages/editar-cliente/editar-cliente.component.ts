@@ -59,9 +59,12 @@ export class EditarClienteComponent implements OnInit {
         telefone: value.telefone!,
       };
 
-      this.clienteService
-        .patchCliente(cliente, this.id)
-        .subscribe(() => this.goBack());
+      this.clienteService.patchCliente(cliente, this.id).subscribe({
+        next: () => {
+          alert('Cliente atualizado com sucesso!');
+          this.goBack();
+        },
+      });
     }
   }
 }

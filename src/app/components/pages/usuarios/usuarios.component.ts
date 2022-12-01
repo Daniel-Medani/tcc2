@@ -18,11 +18,6 @@ export class UsuariosComponent implements OnInit {
   displayedColumns: string[] = ['nomeUsuario', 'email', 'funcao', 'acoes'];
   dataSource!: MatTableDataSource<Usuario>;
 
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
-
   getUsuarios(): void {
     this.usuarioService.getUsuarios().subscribe({
       next: (usuario) => {
@@ -34,6 +29,7 @@ export class UsuariosComponent implements OnInit {
   deleteUsuario(_id: string) {
     this.usuarioService.deleteUsuario(_id).subscribe({
       next: () => {
+        alert('Usuário removido com sucesso!');
         window.location.reload();
       },
     });

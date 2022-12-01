@@ -23,7 +23,7 @@ export class NovoPetComponent implements OnInit {
   ngOnInit(): void {
     this.novoPetForm = this.fb.group({
       nome: ['', Validators.required],
-      sexo: [''],
+      sexo: ['', Validators.required],
       idade: [''],
       raca: [''],
     });
@@ -36,11 +36,12 @@ export class NovoPetComponent implements OnInit {
 
   addPet() {
     if (this.novoPetForm.valid) {
-      this.clienteService
-        .addPet(this.novoPetForm.value, this.id)
-        .subscribe(() => {
+      this.clienteService.addPet(this.novoPetForm.value, this.id).subscribe({
+        next: () => {
+          alert('Pet adicionado com sucesso!');
           this.goBack();
-        });
+        },
+      });
     }
   }
 }

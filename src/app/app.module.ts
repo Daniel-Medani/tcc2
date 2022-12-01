@@ -37,6 +37,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 @NgModule({
   declarations: [
@@ -76,6 +77,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatDatepickerModule,
     MatNativeDateModule,
     MatCheckboxModule,
+    MatAutocompleteModule,
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'pt-br' }],
   bootstrap: [AppComponent],

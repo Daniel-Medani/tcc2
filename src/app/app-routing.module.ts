@@ -14,8 +14,10 @@ import { NovoUsuarioComponent } from './components/pages/novo-usuario/novo-usuar
 import { EditarUsuarioComponent } from './components/pages/editar-usuario/editar-usuario.component';
 
 const routes: Routes = [
+  { path: '', component: AgendaComponent },
   { path: 'agendamentos', component: AgendaComponent },
   { path: 'agendamentos/novo', component: NovoAgendamentoComponent },
+  { path: 'agendamentos/:id/editar', component: NovoAgendamentoComponent },
   { path: 'clientes', component: ClientesComponent },
   { path: 'pets', component: PetsComponent },
   { path: 'clientes/novo', component: NovoClienteComponent },

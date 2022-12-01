@@ -57,6 +57,7 @@ export class PetsClienteComponent implements OnInit {
   deletePet(_id: string): void {
     this.petService.deletePet(_id).subscribe({
       next: () => {
+        alert('Pet removido com sucesso!');
         window.location.reload();
       },
     });

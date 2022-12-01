@@ -32,11 +32,12 @@ export class NovoClienteComponent implements OnInit {
 
   addCliente() {
     if (this.novoClienteForm.valid) {
-      this.clienteService
-        .addCliente(this.novoClienteForm.value)
-        .subscribe(() => {
+      this.clienteService.addCliente(this.novoClienteForm.value).subscribe({
+        next: () => {
+          alert('Cliente adicionado com sucesso!');
           this.goBack();
-        });
+        },
+      });
     }
   }
 }
