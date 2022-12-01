@@ -16,8 +16,12 @@ export class AgendamentoService {
     return this.http.post<Agendamento>(`${this.apiUrl}/novo`, agendamento);
   }
 
-  getAgendamento(data: string) {
+  getAgendamentoByDate(data: string) {
     return this.http.post<Agendamento[]>(`${this.apiUrl}`, { data });
+  }
+
+  getAgendamentoById(_id: string) {
+    return this.http.get<Agendamento>(`${this.apiUrl}/${_id}`);
   }
 
   deleteAgendamento(_id: string) {

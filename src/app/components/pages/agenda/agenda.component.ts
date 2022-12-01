@@ -40,7 +40,7 @@ export class AgendaComponent implements OnInit {
   }
 
   getAgendamento(data: string): void {
-    this.agendaService.getAgendamento(data).subscribe({
+    this.agendaService.getAgendamentoByDate(data).subscribe({
       next: (agendamento) => {
         this.dataSource = new MatTableDataSource(agendamento);
       },

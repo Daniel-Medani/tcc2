@@ -12,12 +12,13 @@ import { NovoAgendamentoComponent } from './components/pages/novo-agendamento/no
 import { UsuariosComponent } from './components/pages/usuarios/usuarios.component';
 import { NovoUsuarioComponent } from './components/pages/novo-usuario/novo-usuario.component';
 import { EditarUsuarioComponent } from './components/pages/editar-usuario/editar-usuario.component';
+import { EditarAgendamentoComponent } from './components/pages/editar-agendamento/editar-agendamento.component';
 
 const routes: Routes = [
   { path: '', component: AgendaComponent },
   { path: 'agendamentos', component: AgendaComponent },
   { path: 'agendamentos/novo', component: NovoAgendamentoComponent },
-  { path: 'agendamentos/:id/editar', component: NovoAgendamentoComponent },
+  { path: 'agendamentos/:id/editar', component: EditarAgendamentoComponent },
   { path: 'clientes', component: ClientesComponent },
   { path: 'pets', component: PetsComponent },
   { path: 'clientes/novo', component: NovoClienteComponent },
