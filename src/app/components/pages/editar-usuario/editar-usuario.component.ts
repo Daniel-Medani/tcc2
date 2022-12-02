@@ -22,13 +22,6 @@ export class EditarUsuarioComponent implements OnInit {
   usuario!: Usuario;
   id!: any;
 
-  // editUsuarioForm = this.fb.group({
-  //   nomeUsuario: ['', Validators.required],
-  //   senha: ['', Validators.required],
-  //   email: ['', Validators.required],
-  //   funcao: ['', Validators.required],
-  // });
-
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
     this.getUsuario();
@@ -61,21 +54,4 @@ export class EditarUsuarioComponent implements OnInit {
       });
     }
   }
-
-  // updateUsuario(): void {
-  //   const { valid, value } = this.editUsuarioForm;
-
-  //   if (valid) {
-  //     const usuario: Usuario = {
-  //       nomeUsuario: value.nomeUsuario!,
-  //       senha: value.senha!,
-  //       email: value.email!,
-  //       funcao: value.funcao!,
-  //     };
-
-  //     this.usuarioService
-  //       .patchUsuario(usuario, this.id)
-  //       .subscribe(() => this.goBack());
-  //   }
-  // }
 }
