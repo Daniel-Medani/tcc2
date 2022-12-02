@@ -12,7 +12,7 @@ export class UsuarioService {
   constructor(private http: HttpClient) {}
 
   createUsuario(usuario: Usuario) {
-    return this.http.post<Usuario>(this.apiUrl, usuario);
+    return this.http.post<Usuario>(`${this.apiUrl}/novo`, usuario);
   }
 
   getUsuarios() {

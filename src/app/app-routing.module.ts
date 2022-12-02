@@ -13,22 +13,65 @@ import { UsuariosComponent } from './components/pages/usuarios/usuarios.componen
 import { NovoUsuarioComponent } from './components/pages/novo-usuario/novo-usuario.component';
 import { EditarUsuarioComponent } from './components/pages/editar-usuario/editar-usuario.component';
 import { EditarAgendamentoComponent } from './components/pages/editar-agendamento/editar-agendamento.component';
+import { LoginComponent } from './components/pages/login/login.component';
+import { AuthGuard } from './core/guards/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: AgendaComponent },
-  { path: 'agendamentos', component: AgendaComponent },
-  { path: 'agendamentos/novo', component: NovoAgendamentoComponent },
-  { path: 'agendamentos/:id/editar', component: EditarAgendamentoComponent },
-  { path: 'clientes', component: ClientesComponent },
-  { path: 'pets', component: PetsComponent },
-  { path: 'clientes/novo', component: NovoClienteComponent },
-  { path: 'clientes/:id/editar', component: EditarClienteComponent },
-  { path: 'clientes/:id/pets', component: PetsClienteComponent },
-  { path: 'pets/:idPet/editar', component: EditarPetComponent },
-  { path: 'clientes/:id/pets/novo', component: NovoPetComponent },
-  { path: 'usuarios', component: UsuariosComponent },
-  { path: 'usuarios/novo', component: NovoUsuarioComponent },
-  { path: 'usuarios/:id/editar', component: EditarUsuarioComponent },
+  { path: 'login', component: LoginComponent },
+  { path: '', component: AgendaComponent, canActivate: [AuthGuard] },
+  {
+    path: 'agendamentos',
+    component: AgendaComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'agendamentos/novo',
+    component: NovoAgendamentoComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'agendamentos/:id/editar',
+    component: EditarAgendamentoComponent,
+    canActivate: [AuthGuard],
+  },
+  { path: 'clientes', component: ClientesComponent, canActivate: [AuthGuard] },
+  { path: 'pets', component: PetsComponent, canActivate: [AuthGuard] },
+  {
+    path: 'clientes/novo',
+    component: NovoClienteComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'clientes/:id/editar',
+    component: EditarClienteComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'clientes/:id/pets',
+    component: PetsClienteComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'pets/:idPet/editar',
+    component: EditarPetComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'clientes/:id/pets/novo',
+    component: NovoPetComponent,
+    canActivate: [AuthGuard],
+  },
+  { path: 'usuarios', component: UsuariosComponent, canActivate: [AuthGuard] },
+  {
+    path: 'usuarios/novo',
+    component: NovoUsuarioComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'usuarios/:id/editar',
+    component: EditarUsuarioComponent,
+    canActivate: [AuthGuard],
+  },
 ];
 
 @NgModule({

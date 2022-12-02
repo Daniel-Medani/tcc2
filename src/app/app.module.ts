@@ -50,7 +50,6 @@ import { EditarAgendamentoComponent } from './components/pages/editar-agendament
     LoginComponent,
     UsuariosComponent,
     NovoUsuarioComponent,
-    SidenavComponent,
     PetsClienteComponent,
     EditarClienteComponent,
     EditarPetComponent,
@@ -58,6 +57,7 @@ import { EditarAgendamentoComponent } from './components/pages/editar-agendament
     NovoAgendamentoComponent,
     EditarUsuarioComponent,
     EditarAgendamentoComponent,
+    SidenavComponent,
   ],
   imports: [
     BrowserModule,

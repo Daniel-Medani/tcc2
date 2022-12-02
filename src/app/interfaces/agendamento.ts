@@ -1,8 +1,11 @@
+import { Cliente } from './cliente';
+import { Pet } from './pet';
+
 export interface Agendamento {
   status: string;
   data: Date;
-  cliente: string;
-  pet: string;
+  cliente: Cliente;
+  pet: Pet;
   servico: string;
   transporte: Transporte;
   carrapatos: Boolean;
@@ -11,7 +14,7 @@ export interface Agendamento {
   obs: string;
 }
 
-enum Transporte {
+export enum Transporte {
   CLIENTE = 1,
   BUSCA_ENTREGA = 2,
   BUSCAR = 3,

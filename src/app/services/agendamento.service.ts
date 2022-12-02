@@ -27,4 +27,11 @@ export class AgendamentoService {
   deleteAgendamento(_id: string) {
     return this.http.delete<Agendamento>(`${this.apiUrl}/${_id}`);
   }
+
+  patchAgendamento(agendamento: Agendamento, _id: string) {
+    return this.http.patch<Agendamento>(
+      `${this.apiUrl}/${_id}/editar`,
+      agendamento
+    );
+  }
 }

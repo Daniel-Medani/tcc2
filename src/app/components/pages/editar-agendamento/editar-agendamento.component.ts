@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
@@ -17,7 +18,8 @@ export class EditarAgendamentoComponent implements OnInit {
     private route: ActivatedRoute,
     private fb: FormBuilder,
     private agendaService: AgendamentoService,
-    private clienteService: ClienteService
+    private clienteService: ClienteService,
+    private location: Location
   ) {}
 
   agendamento!: Agendamento;
@@ -32,7 +34,9 @@ export class EditarAgendamentoComponent implements OnInit {
   }
 
   getClientePets() {
-    this.pets$ = this.clienteService.getClientePets(this.agendamento.cliente);
+    this.pets$ = this.clienteService.getClientePets(
+      this.agendamento.cliente._id
+    );
   }
 
   getAgendamento() {
@@ -41,8 +45,8 @@ export class EditarAgendamentoComponent implements OnInit {
       this.editAgendamentoForm = this.fb.group({
         status: [this.agendamento.status, Validators.required],
         data: [this.agendamento.data, Validators.required],
-        cliente: [this.agendamento.cliente, Validators.required],
-        pet: [this.agendamento.pet, Validators.required],
+        cliente: [this.agendamento.cliente._id, Validators.required],
+        pet: [this.agendamento.pet._id, Validators.required],
         servico: [this.agendamento.servico, Validators.required],
         transporte: [this.agendamento.transporte, Validators.required],
         carrapatos: [this.agendamento.carrapatos],
@@ -50,6 +54,26 @@ export class EditarAgendamentoComponent implements OnInit {
         feridas: [this.agendamento.feridas],
         obs: [this.agendamento.obs],
       });
+      console.log(agendamento);
+      console.log({ form: this.editAgendamentoForm.value });
+      this.getClientePets();
     });
+  }
+
+  updateAgendamento() {
+    const { valid, value } = this.editAgendamentoForm;
+    console.log(value);
+    if (valid) {
+      this.agendaService.patchAgendamento(value, this.id).subscribe({
+        next: () => {
+          alert('Cliente atualizado com sucesso!');
+          this.goBack();
+        },
+      });
+    }
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }

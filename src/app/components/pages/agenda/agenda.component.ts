@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { Agendamento } from 'src/app/interfaces/agendamento';
+import { Agendamento, Transporte } from 'src/app/interfaces/agendamento';
 import { AgendamentoService } from 'src/app/services/agendamento.service';
 
 @Component({
@@ -25,6 +25,7 @@ export class AgendaComponent implements OnInit {
     'pet',
     'cliente',
     'telefone',
+    'transporte',
     'acoes',
   ];
   dataSource!: MatTableDataSource<Agendamento>;
@@ -49,5 +50,20 @@ export class AgendaComponent implements OnInit {
 
   deleteAgendamento() {
     console.log('delete');
+  }
+
+  getTransporteLabel(id: number) {
+    switch (id) {
+      case Transporte.BUSCAR:
+        return 'Buscar';
+      case Transporte.BUSCA_ENTREGA:
+        return 'Busca/Entrega';
+      case Transporte.CLIENTE:
+        return 'Cliente';
+      case Transporte.ENTREGAR:
+        return 'Entregar';
+      default:
+        return '';
+    }
   }
 }
