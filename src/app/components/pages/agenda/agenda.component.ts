@@ -48,8 +48,13 @@ export class AgendaComponent implements OnInit {
     });
   }
 
-  deleteAgendamento() {
-    console.log('delete');
+  deleteAgendamento(_id: string) {
+    this.agendaService.deleteAgendamento(_id).subscribe({
+      next: () => {
+        alert('Agendamento removido com sucesso!');
+        window.location.reload();
+      },
+    });
   }
 
   getTransporteLabel(id: number) {

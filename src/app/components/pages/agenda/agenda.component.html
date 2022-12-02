@@ -47,7 +47,7 @@
                 <button mat-icon-button color="primary" routerLink="{{element._id}}/editar">
                     <mat-icon>edit</mat-icon>
                 </button>
-                <button mat-icon-button color="warn" (click)="deleteAgendamento()">
+                <button mat-icon-button color="warn" (click)="deleteAgendamento(element._id)">
                     <mat-icon>delete</mat-icon>
                 </button>
             </td>
