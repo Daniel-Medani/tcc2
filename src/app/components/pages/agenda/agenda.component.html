@@ -5,10 +5,9 @@
                 Novo Agendamento
             </button>
         </div>
-        <mat-form-field appearance="fill">
-            <mat-label>Escolha uma data</mat-label>
-            <input matInput [(ngModel)]="data" (change)="getAgendamento(data)" type="date">
-        </mat-form-field>
+        <div class="date">
+            <input id="datepicker" matInput [(ngModel)]="data" (change)="getAgendamento(data)" type="date">
+        </div>
     </header>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
